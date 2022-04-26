@@ -70,5 +70,4 @@ for (var i = 0;i <5;i++){
 }
 var query = COMMIT WORK;
 query.close();
-
 }
