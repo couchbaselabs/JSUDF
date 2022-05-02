@@ -58,7 +58,6 @@ END;
 */
 
 // Below JSUDF calculates elapsed time down to the 1000th of a second (as opposed to 100th in PL/SQL implementation above)
-// NOTE: THIS IS STILL A WORK-IN-PROGRESS AND NOT YET TESTED FULLY 
 
 function calculate_elapsed_time() {
     var n = 0;
@@ -67,13 +66,14 @@ function calculate_elapsed_time() {
     var start = new Date().getTime();
 
     for (i=1; i<=50000; i++){
-        var selectquery = SELECT 1 INTO n FROM dual; // This is work-in-progress.
+        var selectquery = SELECT 1;
         for (const row of selectquery) {
+           // application logic
         }
     }
 
     var end = new Date().getTime();
     COMMIT WORK;
 
-    return end - start;
+    return (end - start);
 }
