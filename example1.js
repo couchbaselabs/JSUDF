@@ -17,19 +17,15 @@ END;
 function forloop(){
 var x=100;
 var querybegin=BEGIN WORK;
-querybegin.close();
 for (i=1;i<=10;i++){
     var params = [i,x];
     if (i%2 == 0){
         var query= N1QL('INSERT INTO temp VALUES (uuid(),{\"val1\":$1,\"val2\":$2,\"val3\":"val1 is is even"})',params); 
-        query.close();
         }
     else{
         var query= N1QL('INSERT INTO temp VALUES (uuid(),{\"val1\":$1,\"val2\":$2,\"val3\":"val1 is odd"})',params); 
-        query.close();
         }
     x = x+100;
     }
 var querycommit = COMMIT WORK;
-querycommit.close();
 }
