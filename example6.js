@@ -11,7 +11,8 @@ function doStockLevel(w_id,d_id,threshold){
         for (const row of query) {
              result.push(row);
         }
-        
+        query.close();
+
         var  o_id = result[0]['D_NEXT_O_ID'];
         params = [w_id, d_id, o_id, (o_id - 20), w_id, threshold];
         query = N1QL('SELECT COUNT(DISTINCT(o.OL_I_ID)) AS CNT_OL_I_ID FROM  default:default.tpcc.ORDER_LINE o INNER JOIN default:default.tpcc.STOCK s ON (o.OL_W_ID == s.S_W_ID AND o.OL_I_ID ==  s.S_I_ID) WHERE o.OL_W_ID = $1 AND o.OL_D_ID = $2 AND o.OL_O_ID < $3 AND o.OL_O_ID >= $4 AND s.S_QUANTITY < $6',params);
@@ -19,5 +20,6 @@ function doStockLevel(w_id,d_id,threshold){
         for (const row of query) {
              result.push(row);
          }
+        query.close();
         return result;
 }

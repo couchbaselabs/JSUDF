@@ -67,37 +67,59 @@ SALES          WARD
 
 function exampleforinnerjoin(){
 var querybegin=BEGIN WORK;
+querybegin.close();
 
-var insertquery = INSERT INTO departments VALUES (uuid(),{"department_id":"10","department_name":"ACCOUNTING","location":"NEW YORK"});
-var insertquery = INSERT INTO departments VALUES (uuid(),{"department_id":"20","department_name":"RESEARCH","location":"DALLAS"});
-var insertquery = INSERT INTO departments VALUES (uuid(),{"department_id":"30","department_name":"SALES","location":"CHICAGO"});
-var insertquery = INSERT INTO departments VALUES (uuid(),{"department_id":"40","department_name":"OPERATIONS","location":"BOSTON"});
+var insertquery = INSERT INTO test.testscope.departments VALUES (uuid(),{"department_id":"10","department_name":"ACCOUNTING","location":"NEW YORK"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.departments VALUES (uuid(),{"department_id":"20","department_name":"RESEARCH","location":"DALLAS"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.departments VALUES (uuid(),{"department_id":"30","department_name":"SALES","location":"CHICAGO"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.departments VALUES (uuid(),{"department_id":"40","department_name":"OPERATIONS","location":"BOSTON"});
+insertquery.close();
 var query = COMMIT WORK;
+query.close();
 
 
 var querybegin=BEGIN WORK;
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7369","employee_name":'SMITH',"job":'CLERK',"manager_id":"7902","salary":"800","commission":"NULL","department_id":"20"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7499","employee_name":'ALLEN',"job":'SALESMAN',"manager_id":"7698","salary":"1600","commission":"300","department_id":"30"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7521","employee_name":'WARD',"job":'SALESMAN',"manager_id":"7698","salary":"1250","commission":"500","department_id":"30"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7566","employee_name":'JONES',"job":'MANAGER',"manager_id":"7839","salary":"2975","commission":"NULL","department_id":"20"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7654","employee_name":'MARTIN',"job":'SALESMAN',"manager_id":"7698","salary":"1250","commission":"1400","department_id":"30"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7698","employee_name":'BLAKE',"job":'MANAGER',"manager_id":"7839","salary":"2850","commission":"NULL","department_id":"30"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7782","employee_name":'CLARK',"job":'MANAGER',"manager_id":"7839","salary":"2450","commission":"NULL","department_id":"10"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7788","employee_name":'SCOTT',"job":'ANALYST',"manager_id":"7566","salary":"3000","commission":"NULL","department_id":"20"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7839","employee_name":'KING',"job":'PRESIDENT',"manager_id":"NULL","salary":"5000","commission":"NULL","department_id":"10"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7844","employee_name":'TURNER',"job":'SALESMAN',"manager_id":"7698","salary":"1500","commission":"0","department_id":"30"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7876","employee_name":'ADAMS',"job":'CLERK',"manager_id":"7788","salary":"1100","commission":"NULL","department_id":"20"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7900","employee_name":'JAMES',"job":'CLERK',"manager_id":"7698","salary":"950","commission":"NULL","department_id":"30"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7902","employee_name":'FORD',"job":'ANALYST',"manager_id":"7566","salary":"3000","commission":"NULL","department_id":"20"});
-var insertquery = INSERT INTO employees VALUES (uuid(),{"employee_id":"7934","employee_name":'MILLER',"job":'CLERK',"manager_id":"7782","salary":"1300","commission":"NULL","department_id":"10"});
+querybegin.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7369","employee_name":'SMITH',"job":'CLERK',"manager_id":"7902","salary":"800","commission":"NULL","department_id":"20"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7499","employee_name":'ALLEN',"job":'SALESMAN',"manager_id":"7698","salary":"1600","commission":"300","department_id":"30"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7521","employee_name":'WARD',"job":'SALESMAN',"manager_id":"7698","salary":"1250","commission":"500","department_id":"30"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7566","employee_name":'JONES',"job":'MANAGER',"manager_id":"7839","salary":"2975","commission":"NULL","department_id":"20"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7654","employee_name":'MARTIN',"job":'SALESMAN',"manager_id":"7698","salary":"1250","commission":"1400","department_id":"30"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7698","employee_name":'BLAKE',"job":'MANAGER',"manager_id":"7839","salary":"2850","commission":"NULL","department_id":"30"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7782","employee_name":'CLARK',"job":'MANAGER',"manager_id":"7839","salary":"2450","commission":"NULL","department_id":"10"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7788","employee_name":'SCOTT',"job":'ANALYST',"manager_id":"7566","salary":"3000","commission":"NULL","department_id":"20"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7839","employee_name":'KING',"job":'PRESIDENT',"manager_id":"NULL","salary":"5000","commission":"NULL","department_id":"10"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7844","employee_name":'TURNER',"job":'SALESMAN',"manager_id":"7698","salary":"1500","commission":"0","department_id":"30"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7876","employee_name":'ADAMS',"job":'CLERK',"manager_id":"7788","salary":"1100","commission":"NULL","department_id":"20"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7900","employee_name":'JAMES',"job":'CLERK',"manager_id":"7698","salary":"950","commission":"NULL","department_id":"30"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7902","employee_name":'FORD',"job":'ANALYST',"manager_id":"7566","salary":"3000","commission":"NULL","department_id":"20"});
+insertquery.close();
+var insertquery = INSERT INTO test.testscope.employees VALUES (uuid(),{"employee_id":"7934","employee_name":'MILLER',"job":'CLERK',"manager_id":"7782","salary":"1300","commission":"NULL","department_id":"10"});
+insertquery.close();
 var query = COMMIT WORK;
+query.close();
 
-var crindex = create index idx1 on employees(department_id);
-var crindex1 = CREATE PRIMARY INDEX ON `default`:`departments`;
-var query = SELECT d.department_name, e.employee_name FROM departments d INNER JOIN employees e ON d.department_id = e.department_id WHERE d.department_id >= "30" ORDER BY d.department_name;
+var crindex = create index idx1 on test.testscope.employees(department_id);
+var query = SELECT d.department_name, e.employee_name FROM test.testscope.departments d INNER JOIN test.testscope.employees e ON d.department_id = e.department_id WHERE d.department_id >= "30" ORDER BY d.department_name;
 var result = [];
 for (const row of query) {
     result.push(row);
     }
+query.close();
 return result;
 }

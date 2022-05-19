@@ -32,13 +32,15 @@ for (i=0;i<4;i++){
     x = x+1000;
     counter = counter + 1;
     params = [x,counter];
-    var insertquery =N1QL('INSERT INTO exam3 VALUES (uuid(),{"x":$1,"counter":$2,"desc":"in OUTER loop"})',params);
+    var insertquery =N1QL('INSERT INTO test.testscope.exam3 VALUES (uuid(),{"x":$1,"counter":$2,"desc":"in OUTER loop"})',params);
+    insertquery.close();
     var x = 0;
     for (j=0;j<4;j++){
         x=x+1;
         counter = counter+1;
         params = [x,counter];
-        var insertquery =N1QL('INSERT INTO exam3 VALUES (uuid(),{"x":$1,"counter":$2,"desc":"in INNER loop"})',params); 
+        var insertquery =N1QL('INSERT INTO test.testscope.exam3 VALUES (uuid(),{"x":$1,"counter":$2,"desc":"in INNER loop"})',params); 
+        insertquery.close();
         }
     }
 }
