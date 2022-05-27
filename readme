@@ -79,3 +79,9 @@ CREATE OR REPLACE FUNCTION totalEmployees() LANGUAGE JAVASCRIPT AS "totalEmploye
 execute function insertdata();
 SELECT count(*) FROM test.testscope.emp8;
 
+Example 9:
+curl -v -X POST http://localhost:8093/evaluator/v1/libraries/libfact -u Administrator:password –data-binary '@example9.js'
+
+CREATE FUNCTION fact(x) LANGUAGE javascript AS "fact" at "libfact"
+execute function fact(3);
+execute function fact(0.5);
