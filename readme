@@ -86,7 +86,7 @@ CREATE FUNCTION fact(x) LANGUAGE javascript AS "fact" at "libfact"
 execute function fact(3);
 execute function fact(0.5);
 
-Example elapsed_time_calculater:
+Example elapsed_time_calculator:
 curl -v -X POST http://localhost:8093/evaluator/v1/libraries/elapsed_time_calculator -u Administrator:password --data-binary @./elapsed_time_calculator.js
 
 CREATE OR REPLACE FUNCTION calculate_elapsed_time() LANGUAGE JAVASCRIPT AS "calculate_elapsed_time" AT "elapsed_time_calculator";
