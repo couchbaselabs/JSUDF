@@ -41,6 +41,8 @@ var l_manager;
 
 var querybegin=BEGIN WORK;
 querybegin.close();
+var insertquery = INSERT INTO test.testscope.emp VALUES (uuid(),{"emp_name":"AAA","emp_no":"999","salary":"100000"});
+insertquery.close();
 var insertquery = INSERT INTO test.testscope.emp VALUES (uuid(),{"emp_name":"BBB","emp_no":"1000","salary":"25000","manager":"AAA"});
 insertquery.close();
 var insertquery = INSERT INTO test.testscope.emp VALUES (uuid(),{"emp_name":"XXX","emp_no":"1001","salary":"10000","manager":"BBB"});
